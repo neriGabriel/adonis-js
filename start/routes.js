@@ -23,6 +23,9 @@ Route.post('/register', "AuthController.register")
 Route.post('/authenticate', "AuthController.authenticate")
 
 
+Route.get('/filme', "FilmeController.index")
+
+Route.post('/filme', "FilmeController.insert")
 //E.G OF ROUTE WITH MIDDLEWARE AUTH JWT
 //LOOK ON ./config/auth.js TO SEE THE AUTH OPTION
-Route.get('/app', "AppController.index").middleware(["auth"])
+//Route.get('/app', "AppController.index").middleware(["auth"])
