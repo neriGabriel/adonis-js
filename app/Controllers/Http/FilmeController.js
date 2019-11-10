@@ -8,11 +8,25 @@ class FilmeController {
   }
 
   async insert({request}) {
-    const data = request.only(["fil_nome", "fil_data"])
+    const data = request.only(["fil_nome"])
 
     const filme = await Filme.create(data);
 
     return filme
+  }
+
+  async destroy({ params }) {
+    const data = params.id
+
+    const filme = await Filme.find(data)
+
+    return await filme.delete()
+  }
+
+  async getById({request}) {
+    const data = request.only(['id'])
+
+    return await Filme.find(data)
   }
 }
 
