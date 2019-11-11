@@ -21,3 +21,9 @@ Factory.blueprint('App/Models/User', (faker) => {
      password: '123',
    }
  })
+
+Factory.blueprint('App/Models/Filme', (faker) => {
+    return {
+      fil_nome: faker.username(),
+    }
+})
